@@ -52,6 +52,14 @@
   opacity: 0.9;
 }
 
+.cartScreen__right .cartScreen__formBox {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 10px;
+}
+
 @media (max-width: 1320px) {
   .cartScreen {
     max-width: 900px;

@@ -42,6 +42,9 @@ const ProductScreen = () => {
           <div className={styles.left__image}>
           <img src={product.imageUrl} alt={product.name} />
           </div>
+          <div className={styles.left__image}>
+          <img className={styles.left__img} src={product.imageUrl} alt={product.name} />
+          </div>
           <div className={styles.left__info}>
             <p className={styles.left__name}>{product.name}</p>
             <p>${product.price}</p>
@@ -67,8 +70,6 @@ const ProductScreen = () => {
               <button type="button" onClick={addToCartHandler}>Add To Cart</button>
             </p>
           </div>
-
-        
         </div>
           </>
       )}

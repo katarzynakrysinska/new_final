@@ -30,7 +30,6 @@ export const adjustItemRequest = (id, request) => {
   };
 };
 
-
 export const removeFromCart = (id) => (dispatch, getState) => {
   dispatch({
     type: actionTypes.REMOVE_FROM_CART,

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import styles from './CartScreen.module.scss';
+import styles from './OrderScreen.module.scss';
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
@@ -9,7 +9,6 @@ import OrderItem from '../components/OrderItem';
 
 //actions
 import { addOneOrder } from '../redux/actions/orderActions';
-
 
 const OrderScreen = () => {
 
@@ -58,6 +57,7 @@ const OrderScreen = () => {
       request: '',
       
     });
+    
       } else {
         alert('Please fill required fields');
       }
@@ -84,7 +84,15 @@ const OrderScreen = () => {
           <p>Subtotal ({getCartCount()}) items </p>
           <p>${getCartSubTotal().toFixed(2)}</p>
         </div>
+
+        <div className={styles.cartScreen__formBox}>
+        {cart.length === 0 ? (
+          <div>
+            <></>
+          </div>
+        ) : (
         <form className={styles.addForm} action="/orders" method="POST" onSubmit={submitForm}>
+            <p>Fill the form please:</p>
             <label>Name</label>
             <input className={styles.formInput} type="text" name="name" onChange={handleChange}></input>
             <label>Surname</label>
@@ -94,18 +102,17 @@ const OrderScreen = () => {
             <label>Email</label>
             <input className={styles.formInput} type="email" name="email" onChange={handleChange}></input>
             <label>Additional request</label>
-            <input className={styles.formInput} type="text" name="request" onChange={handleChange}></input>
+            <textarea className={styles.formInput} type="text" name="request" onChange={handleChange}></textarea>
             <div>
               <button className={styles.cartScreen__button}>Submit Order</button>
             </div>
           </form>
-        
+        )}
       </div>
-
-      
     </div>
-  )
-}
 
+    </div>
+  );
+};
 
 export default OrderScreen;

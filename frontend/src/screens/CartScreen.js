@@ -32,8 +32,6 @@ const CartScreen = () => {
     return cartItems.reduce((price, item) => (item.price * item.qty) + price, 0);
   };
 
-  
-
   return (
     <div className={styles.cartScreen}>
       <div className={styles.cartScreen__left}>

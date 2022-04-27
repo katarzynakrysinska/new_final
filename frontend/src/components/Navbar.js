@@ -17,7 +17,7 @@ const Navbar = ({click}) => {
       {/* Logo */}
       <div className={styles.navbar__logo}>
       <Link to="/" className={styles.navbar__main_link}>
-        <h2>Your favorite shop</h2>
+        <h2>Gallery Of Depression</h2>
       </Link>
       </div>
 

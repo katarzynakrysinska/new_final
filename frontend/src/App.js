@@ -17,7 +17,6 @@ function App() {
 
   const [sideToggle, setSideToggle] = useState(false);
 
-
   return (
     <BrowserRouter>
         <Navbar click={() => setSideToggle(true)} />

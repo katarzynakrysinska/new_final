@@ -2,13 +2,13 @@ import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from "react";
 import styles from './HomeScreen.module.scss';
+import PropTypes from 'prop-types';
 
 //components
 import Product from "../components/Product";
 
 //actions
 import { getProducts as listProducts } from '../redux/actions/productActions';
-
 
 const HomeScreen = () => {
 
@@ -45,5 +45,6 @@ const HomeScreen = () => {
     </div>
   )
 }
+
 
 export default HomeScreen;
