@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from './CartItem.module.scss';
 import { Link } from 'react-router-dom';
+import { adjustItemRequest} from '../redux/actions/cartActions';
 
 const CartItem = ({item, qtyChangeHandler, removeHandler}) => {
+
   return (
     <div className={styles.cartItem}>
       <div className={styles.cartItem__image}>

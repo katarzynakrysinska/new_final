@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './CartScreen.module.scss';
-import { useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch, useState} from "react-redux";
 import { Link } from "react-router-dom";
 
 // components
@@ -32,6 +32,8 @@ const CartScreen = () => {
     return cartItems.reduce((price, item) => (item.price * item.qty) + price, 0);
   };
 
+  
+
   return (
     <div className={styles.cartScreen}>
       <div className={styles.cartScreen__left}>
@@ -56,7 +58,7 @@ const CartScreen = () => {
           <p>${getCartSubTotal().toFixed(2)}</p>
         </div>
         <div>
-          <button>Proceed To Checkout</button>
+          <Link to={`/order`} className={styles.cartScreen__button}>Proceed To Checkout</Link>
         </div>
         
       </div>
